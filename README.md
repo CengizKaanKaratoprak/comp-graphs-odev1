@@ -30,6 +30,9 @@ Kavanoz, büyülü elementleri içinde hapseden kavanozları kullanarak oynanan 
 
 ## 3. Sprite Tasarım Süreci
 
+<img width="960" height="320" alt="Elementals" src="https://github.com/user-attachments/assets/486749ec-ce4d-4b31-a697-a5fa73da15ae" />
+
+
 ### Kullanılan Program
 Tüm sprite'lar **Aseprite** ile üretilmiştir. Aseprite'in piksel art odaklı katman sistemi, animasyon kolaylığı ve indexed renk paleti desteği tercih sebebi olmuştur.
 
@@ -82,7 +85,7 @@ Bu projede hazır olarak kullanılan assetler modifiye edilip oyun için tekrard
 
 ```bash
 # 1. Repoyu klonla
-git clone https://github.com/[KULLANICI]/kavanoz-game.git
+git clone [https://github.com/CengizKaanKaratoprak/comp-graphs-odev1.git]
 cd kavanoz-game
 
 # 2. Godot ile aç
