@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjm4nupj3mdss"]
+
+[ext_resource type="Texture2D" uid="uid://dqfcw4w0e5dij" path="res://assets/barricade.png" id="1_iqx1e"]
+[ext_resource type="Script" uid="uid://dkjsgreqbjec4" path="res://scenes/wooden_barricade.gd" id="1_mv1oi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1oi"]
+size = Vector2(27, 47.5)
+
+[node name="wooden_barricade" type="StaticBody2D" unique_id=1946506553 groups=["burnable"]]
+script = ExtResource("1_mv1oi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=129908638]
+texture = ExtResource("1_iqx1e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868833107]
+position = Vector2(1, -0.25)
+shape = SubResource("RectangleShape2D_mv1oi")

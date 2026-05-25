@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://3sm3qc834ent"]
+
+[ext_resource type="Script" uid="uid://dehsegoackh2r" path="res://scripts/seed.gd" id="1_m0bgt"]
+[ext_resource type="Texture2D" uid="uid://dgodgxw5d6okp" path="res://assets/2D Pixel Art Platformer Biome - American Forest/seed.png" id="2_6mtvd"]
+[ext_resource type="Texture2D" uid="uid://d3jgl5turuoc3" path="res://assets/2D Pixel Art Platformer Biome - American Forest/plant.png" id="3_kq6mk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syr4b"]
+atlas = ExtResource("3_kq6mk")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l184s"]
+atlas = ExtResource("2_6mtvd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7sle"]
+atlas = ExtResource("2_6mtvd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7sle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syr4b")
+}],
+"loop": true,
+"name": &"plant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l184s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7sle")
+}],
+"loop": true,
+"name": &"seed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syr4b"]
+size = Vector2(20, 10)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1849650230]
+script = ExtResource("1_m0bgt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=234495309]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_a7sle")
+animation = &"seed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=192132407]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_syr4b")
+disabled = true

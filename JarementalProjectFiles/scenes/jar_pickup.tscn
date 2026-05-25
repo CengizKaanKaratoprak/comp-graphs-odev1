@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://csvpba8y3yabq"]
+
+[ext_resource type="Script" uid="uid://bh4ykdonuriqm" path="res://scripts/jar_pickup.gd" id="1_nkggg"]
+[ext_resource type="Texture2D" uid="uid://b6ns2umxb8fex" path="res://assets/prototype_character_red.png" id="2_2873c"]
+[ext_resource type="Texture2D" uid="uid://cn47erfbadcy1" path="res://assets/air.png" id="2_tomxd"]
+[ext_resource type="Texture2D" uid="uid://dth2288y5juee" path="res://assets/water.png" id="4_r307e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1r4h"]
+atlas = ExtResource("2_tomxd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71a13"]
+atlas = ExtResource("2_tomxd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axdji"]
+atlas = ExtResource("2_2873c")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tomxd"]
+atlas = ExtResource("2_2873c")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu5dj"]
+atlas = ExtResource("4_r307e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5l8"]
+atlas = ExtResource("4_r307e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r307e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1r4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71a13")
+}],
+"loop": true,
+"name": &"air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axdji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tomxd")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu5dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5l8")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tomxd"]
+size = Vector2(16, 18)
+
+[sub_resource type="Gradient" id="Gradient_smehm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tomxd"]
+gradient = SubResource("Gradient_smehm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.10882353, 0.120588236)
+
+[node name="jarpickup" type="RigidBody2D" unique_id=914657360]
+collision_layer = 4
+collision_mask = 7
+lock_rotation = true
+script = ExtResource("1_nkggg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1721784252]
+sprite_frames = SubResource("SpriteFrames_r307e")
+animation = &"fire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020569137]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tomxd")
+
+[node name="JarLight" type="PointLight2D" parent="." unique_id=907487066]
+position = Vector2(0, 3)
+scale = Vector2(1.046875, 0.96875)
+enabled = false
+color = Color(1, 0.54509807, 0.2784314, 1)
+energy = 0.75
+texture = SubResource("GradientTexture2D_tomxd")

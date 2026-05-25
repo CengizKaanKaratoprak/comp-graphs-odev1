@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://drrvbnac5ebqe"]
+
+[ext_resource type="Script" uid="uid://ca2bpx25jyll" path="res://fireball.gd" id="1_1gl40"]
+[ext_resource type="Texture2D" uid="uid://b6ns2umxb8fex" path="res://assets/prototype_character_red.png" id="3_cb14k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kba2"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kba2"]
+atlas = ExtResource("3_cb14k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lgj"]
+atlas = ExtResource("3_cb14k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqoxj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kba2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lgj")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_1gl40"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cb14k"]
+gradient = SubResource("Gradient_1gl40")
+fill = 1
+fill_from = Vector2(0.5147059, 0.5)
+fill_to = Vector2(0.7323529, 0.28235295)
+
+[node name="fireball" type="Area2D" unique_id=413191959]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_1gl40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2131366108]
+shape = SubResource("CircleShape2D_7kba2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1030306278]
+rect = Rect2(-8, -8, 16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1148308434]
+sprite_frames = SubResource("SpriteFrames_vqoxj")
+animation = &"fireball"
+frame = 1
+frame_progress = 0.19029996
+flip_h = true
+
+[node name="FireballLight" type="PointLight2D" parent="." unique_id=627590746]
+color = Color(1, 0.49411765, 0.09803922, 1)
+texture = SubResource("GradientTexture2D_cb14k")
