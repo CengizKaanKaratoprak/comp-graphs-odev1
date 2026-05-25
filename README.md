@@ -85,8 +85,8 @@ Bu projede hazır olarak kullanılan assetler modifiye edilip oyun için tekrard
 
 ```bash
 # 1. Repoyu klonla
-git clone [https://github.com/CengizKaanKaratoprak/comp-graphs-odev1.git]
-cd kavanoz-game
+#    git clone [https://github.com/CengizKaanKaratoprak/comp-graphs-odev1.git]
+#    cd JarementalProjectFiles
 
 # 2. Godot ile aç
 #    Godot'u başlat → "Import" → proje klasöründeki project.godot dosyasını seç
