@@ -65,7 +65,10 @@ Tüm sprite'lar **Aseprite** ile üretilmiştir. Aseprite'in piksel art odaklı 
 
 ## 4. Kullanılan Hazır Asset'ler
 
-Bu projede hazır asset kullanılmamıştır; tüm görseller öğrenci tarafından üretilmiştir.
+Bu projede hazır olarak kullanılan assetler modifiye edilip oyun için tekrardan düzenlenmiştir.
+
+[Karakter](https://snoblin.itch.io/)
+[TileSet](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-plains-255002)
 
 ---
 
