@@ -1,4 +1,4 @@
-# Kavanoz – 2D Platformer
+# Jaremental – 2D Platformer
 
 ## 1. Grup Üyeleri / Öğrenci Bilgileri
 
